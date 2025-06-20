@@ -1,0 +1,33 @@
+:root[data-theme='light'] {
+  --text: blue;
+  --bg: blue;
+  --primary: blue;
+  --secondary: blue;
+  --accent: blue;
+}
+:root[data-theme='dark'] {
+  --text: blue;
+  --bg: blue;
+  --primary: blue;
+  --secondary: blue;
+  --accent: blue;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: blue;
+    --bg: blue;
+    --primary: blue;
+    --secondary: blue;
+    --accent: blue;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: blue;
+    --bg: blue;
+    --primary: blue;
+    --secondary: blue;
+    --accent: blue;
+  }
+}

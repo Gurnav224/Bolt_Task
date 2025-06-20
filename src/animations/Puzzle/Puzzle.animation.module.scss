@@ -1,0 +1,302 @@
+$animate_time: 1000ms;
+
+.boxesWrapper {
+  position: absolute;
+  top: 20rem;
+  right: -20rem;
+  width: 50%;
+  height: 30rem;
+  isolation: isolate;
+  z-index: 1;
+}
+
+.box {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-in-out; /* Opacity transition */
+  filter: drop-shadow(0 0 0.15rem var(--teal-10));
+  animation-delay: 1000ms;
+}
+
+.red1 {
+  // no touch here
+  background-color: var(--teal-7);
+  animation-name: darkBlue1Frame;
+  animation-duration: 9000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.red2 {
+  // no touch here
+  background-color: var(--teal-9);
+  animation-name: darkBlue2Frame;
+  animation-duration: 4000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.red3 {
+  background-color: var(--teal-8);
+  animation-name: darkBlue3Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.black1 {
+  // no touch here
+  background-color: var(--teal-7);
+  animation-name: grey1Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.black2 {
+  background-color: var(--teal-10);
+  animation-name: grey2Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.black3 {
+  background-color: var(--teal-9);
+  animation-name: grey3Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.yellow1 {
+  background-color: var(--teal-8);
+  animation-name: white1Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.yellow2 {
+  background-color: var(--teal-7);
+  animation-name: white2Frame;
+  animation-duration: 6000ms + $animate_time;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes darkBlue1Frame {
+  0% {
+    //step 1 - center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    // step 2 - real location
+    top: 0;
+    left: 0;
+    transform: translate(100%, -20%);
+  }
+  40% {
+    // step 3 - white2 location
+    top: 0;
+    left: 0;
+    transform: translate(120%, 120%);
+  }
+  60% {
+    // step 4 - stay on white2 location for a while
+    top: 0;
+    left: 0;
+    transform: translate(120%, 120%);
+  }
+  80% {
+    // step 5 - go back to real location
+    top: 0;
+    left: 0;
+    transform: translate(100%, -20%);
+  }
+  90% {
+    // step 6 - stack before going to center
+    top: 0;
+    left: 0;
+    transform: translate(120%, 120%);
+  }
+  100% {
+    // step 7 - go back to center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes darkBlue2Frame {
+  // no touch here
+  0% {
+    // step 1 - center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+  }
+  10% {
+  }
+  100% {
+    // step 2 - go to real location
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    transform: translate(240%, 140%);
+  }
+}
+
+@keyframes darkBlue3Frame {
+  0% {
+    // step 1 - center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    // step 2 - go to real location
+    top: 50%;
+    left: 50%;
+    transform: translate(-180%, 100%);
+  }
+  40% {
+    // step 3 - go to grey 2 location
+    transform: translate(480%, 120%);
+  }
+  60% {
+    // step 4 - stay in grey 2 location
+    top: 0;
+    left: 0;
+    transform: translate(480%, 120%);
+  }
+  80% {
+    // step 5 - go back to real location
+    top: 50%;
+    left: 50%;
+    transform: translate(-180%, 100%);
+  }
+  100% {
+    // step 6 - go to center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes grey1Frame {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(60%, -60%);
+  }
+}
+
+@keyframes grey2Frame {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(480%, 120%);
+  }
+}
+
+@keyframes grey3Frame {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(0, 280%);
+  }
+}
+
+@keyframes white1Frame {
+  // no touch here
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: translate(20%, -100%);
+  }
+}
+
+@keyframes white2Frame {
+  // no touch here
+  0% {
+    // step 1 - center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    // step 2 - real location
+    top: 0;
+    left: 0;
+    transform: translate(120%, 120%);
+  }
+  40% {
+    // step 3 - darkBlue1 location
+    top: 0;
+    left: 0;
+    transform: translate(100%, -20%);
+  }
+  60% {
+    // step 4 - stay on darkBlue1 location for a while
+    top: 0;
+    left: 0;
+    transform: translate(100%, -20%);
+  }
+  80% {
+    // step 5 - go back to real location
+    top: 0;
+    left: 0;
+    transform: translate(120%, 120%);
+  }
+  100% {
+    // step 6 - go back to center
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

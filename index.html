@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bolt Task</title>
+  </head>
+
+  <style>
+    #global-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+    .spinner {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      border: 4.5px solid #0000;
+      border-radius: 50%;
+      border-color: blue #0000;
+      -webkit-animation: spinner-e04l1k 1s infinite linear;
+      animation: spinner-e04l1k 1s infinite linear;
+    }
+    .spinner::before,
+    .spinner::after {
+      content: '';
+      grid-area: 1/1;
+      margin: 2.2px;
+      border: inherit;
+      border-radius: 50%;
+    }
+    .spinner::before {
+      border-color: gray #0000;
+      -webkit-animation: inherit;
+      animation: inherit;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      animation-direction: reverse;
+    }
+    .spinner::after {
+      margin: 8.9px;
+    }
+    .fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    @-webkit-keyframes spinner-e04l1k {
+      100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+    @keyframes spinner-e04l1k {
+      100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+  </style>
+  <body id="body">
+    <div id="global-loader" role="status" aria-live="polite">
+      <div class="spinner"></div>
+    </div>
+    <div id="bolt-task"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      window.addEventListener('load', function () {
+        const loader = document.getElementById('global-loader');
+        const body = document.getElementById('body');
+        if (loader) {
+          loader.classList.add('fade-out');
+          setTimeout(function () {
+            body.removeChild(loader);
+          }, 500); // Match the CSS transition duration
+        }
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+@use '/src/styles/break-points.scss' as bp;
+
+.base {
+  display: none;
+  isolation: isolate;
+  position: absolute;
+  background-color: var(--accent-10);
+  padding-inline: 1.5rem;
+  height: 100%;
+  left: 0;
+  flex-direction: column;
+  z-index: 100;
+}
+
+@include bp.desktop {
+  .base {
+    display: flex;
+  }
+}
